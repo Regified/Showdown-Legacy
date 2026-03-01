@@ -92,14 +92,9 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		pp: 20,
 		},
 
-		poison sting: {
+		poisonsting: {
 		inherit: true,
 		basePower: 30,
-		},
-
-		psywave: {
-		inherit: true,
-		accuracy: 95,
 		},
 
 		rapidspin: {
@@ -117,11 +112,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		accuracy: 95,
 		},
 
-		skullbash: {
-		inherit: true,
-		basePower: 130,
-		},
-
 		snore: {
 		inherit: true,
 		accuracy: 100,
@@ -133,44 +123,9 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		pp: 10,
 		},
 
-		synthesis: {
-		inherit: true,
-		pp: 10,
-		},
-
-		moonlight: {
-		inherit: true,
-		pp: 5,
-		},
-
-		morningsun: {
-		inherit: true,
-		basePower: 5,
-		},
-
 		spikecannon: {
 		inherit: true,
 		basePower: 22,
-		},
-
-		swagger: {
-		inherit: true,
-		accuracy: 90,
-		},
-
-		thief: {
-		inherit: true,
-		basePower: 60,
-		},
-
-		thrash: {
-		inherit: true,
-		basePower: 90,
-		},
-
-		triattack: {
-		inherit: true,
-		pp: 15,
 		},
 
 		whirlpool: {
@@ -212,19 +167,9 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		basePower: 35,
 		},
 
-		fly: {
-		inherit: true,
-		accuracy: 90,
-		},
-
 		leechlife: {
 		inherit: true,
 		basePower: 50,
-		},
-
-		petaldance: {
-		inherit: true,
-		basePower: 110,
 		},
 
 		pinmissile: {
@@ -714,6 +659,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	moonlight: {
 		inherit: true,
+		pp: 10,
 		onHit(pokemon) {
 			if (this.field.isWeather(['sunnyday', 'desolateland'])) {
 				this.heal(pokemon.maxhp);
@@ -726,6 +672,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	morningsun: {
 		inherit: true,
+		pp: 10,
 		onHit(pokemon) {
 			if (this.field.isWeather(['sunnyday', 'desolateland'])) {
 				this.heal(pokemon.maxhp);
@@ -779,6 +726,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	petaldance: {
 		inherit: true,
+		basePower: 110,
 		onMoveFail(target, source, move) {
 			source.addVolatile('lockedmove');
 		},
@@ -956,6 +904,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	skullbash: {
 		inherit: true,
+		basePower: 130,
 		onPrepareHit(target, source) {
 			return source.status !== 'slp';
 		},
@@ -1089,6 +1038,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	swagger: {
 		inherit: true,
+		accuracy: 90,
 		onTryHit(target, pokemon) {
 			if (target.boosts.atk >= 6 || target.getStat('atk', false, true) === 999) {
 				this.add('-miss', pokemon);
@@ -1110,6 +1060,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	thief: {
 		inherit: true,
+		basePower: 60,
 		onAfterHit() {},
 		secondary: {
 			chance: 100,
@@ -1131,6 +1082,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	thrash: {
 		inherit: true,
+		basePower: 90,
 		onMoveFail(target, source, move) {
 			source.addVolatile('lockedmove');
 		},
@@ -1145,6 +1097,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	triattack: {
 		inherit: true,
+		pp: 15,
 		onHit(target, source, move) {
 			move.statusRoll = ['par', 'frz', 'brn'][this.random(3)];
 		},
