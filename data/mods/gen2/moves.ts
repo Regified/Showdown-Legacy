@@ -7,6 +7,236 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		critRatio: 3,
 	},
+		absorb: {
+		inherit: true,
+		basePower: 20,
+		},
+
+		bind: {
+		inherit: true,
+		accuracy: 85,
+		basePower: 15,
+		},
+		
+		bonerush: {
+		inherit: true,
+		pp: 20,
+		basePower: 30,
+		},
+
+		bubble: {
+		inherit: true,
+		basePower: 20,
+		},
+
+		cottonspore: {
+		inherit: true,
+		accuracy: 85,
+		},
+
+		cut: {
+		inherit: true,
+		accuracy: 95,
+		basePower: 55,
+		type: "Bug",
+		critRatio: 3,
+		},
+
+		disable: {
+		inherit: true,
+		accuracy: 90,
+		},
+
+		dynamicpunch: {
+		inherit: true,
+		accuracy: 60,
+		},
+
+		fireblast: {
+		inherit: true,
+		pp: 5,
+		},
+		
+		flash: {
+		inherit: true,
+		accuracy: 70,
+		},
+
+		furyattack: {
+		inherit: true,
+		pp: 20,
+		},
+
+		furycutter: {
+		inherit: true,
+		basePower: 20,
+		},
+
+		futuresight: {
+		inherit: true,
+		basePower: 120,
+		},
+
+		megadrain: {
+		inherit: true,
+		basePower: 40,
+		},
+
+		milkdrink: {
+		inherit: true,
+		pp: 10,
+		},
+
+		minimize: {
+		inherit: true,
+		pp: 20,
+		},
+
+		poison sting: {
+		inherit: true,
+		basePower: 30,
+		},
+
+		psywave: {
+		inherit: true,
+		accuracy: 95,
+		},
+
+		rapidspin: {
+		inherit: true,
+		basePower: 20,
+		},
+
+		recover: {
+		inherit: true,
+		pp: 10,
+		},
+
+		rockthrow: {
+		inherit: true,
+		accuracy: 95,
+		},
+
+		skullbash: {
+		inherit: true,
+		basePower: 130,
+		},
+
+		snore: {
+		inherit: true,
+		accuracy: 100,
+		basePower: 60,
+		},
+
+		softboiled: {
+		inherit: true,
+		pp: 10,
+		},
+
+		synthesis: {
+		inherit: true,
+		pp: 10,
+		},
+
+		moonlight: {
+		inherit: true,
+		pp: 5,
+		},
+
+		morningsun: {
+		inherit: true,
+		basePower: 5,
+		},
+
+		spikecannon: {
+		inherit: true,
+		basePower: 22,
+		},
+
+		swagger: {
+		inherit: true,
+		accuracy: 90,
+		},
+
+		thief: {
+		inherit: true,
+		basePower: 60,
+		},
+
+		thrash: {
+		inherit: true,
+		basePower: 90,
+		},
+
+		triattack: {
+		inherit: true,
+		pp: 15,
+		},
+
+		whirlpool: {
+		inherit: true,
+		accuracy: 85,
+		basePower: 15,
+		},
+
+		wrap: {
+		inherit: true,
+		accuracy: 85,
+		basePower: 15,
+		},
+
+		zapcannon: {
+		inherit: true,
+		accuracy: 70,
+		},
+
+		bonemerang: {
+		inherit: true,
+		basePower: 55,
+		},
+
+		clamp: {
+		inherit: true,
+		accuracy: 90,
+		basePower: 50,
+		},
+
+		eggbomb: {
+		inherit: true,
+		accuracy: 90,
+		},
+
+		firespin: {
+		inherit: true,
+		accuracy: 85,
+		basePower: 35,
+		},
+
+		fly: {
+		inherit: true,
+		accuracy: 90,
+		},
+
+		leechlife: {
+		inherit: true,
+		basePower: 50,
+		},
+
+		petaldance: {
+		inherit: true,
+		basePower: 110,
+		},
+
+		pinmissile: {
+		inherit: true,
+		basePower: 25,
+		},
+
+		rollingkick: {
+		inherit: true,
+		basePower: 70,
+		},
+
 	beatup: {
 		inherit: true,
 		onModifyMove(move, pokemon) {
