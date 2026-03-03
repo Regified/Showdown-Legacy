@@ -1738,7 +1738,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 25,
 		category: "Physical",
 		name: "Bone Rush",
-		pp: 10,
+		pp: 20,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		multihit: [2, 5],
@@ -12263,7 +12263,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 0,
 		category: "Status",
 		name: "Milk Drink",
-		pp: 5,
+		pp: 10,
 		priority: 0,
 		flags: { snatch: 1, heal: 1, metronome: 1 },
 		heal: [1, 2],
@@ -14016,7 +14016,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	poisonsting: {
 		num: 40,
 		accuracy: 100,
-		basePower: 15,
+		basePower: 30,
 		category: "Physical",
 		name: "Poison Sting",
 		pp: 35,
@@ -15320,28 +15320,17 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	razorwind: {
 		num: 13,
-		accuracy: 100,
-		basePower: 80,
+		accuracy: 90,
+		basePower: 35,
 		category: "Special",
 		isNonstandard: "Past",
 		name: "Razor Wind",
-		pp: 10,
+		pp: 15,
 		priority: 0,
-		flags: { charge: 1, protect: 1, mirror: 1, metronome: 1, nosleeptalk: 1, failinstruct: 1 },
-		onTryMove(attacker, defender, move) {
-			if (attacker.removeVolatile(move.id)) {
-				return;
-			}
-			this.add('-prepare', attacker, move.name);
-			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
-				return;
-			}
-			attacker.addVolatile('twoturnmove', defender);
-			return null;
-		},
-		critRatio: 2,
+		flags: { protect: 1, mirror: 1, metronome: 1 },
+		volatileStatus: 'partiallytrapped',
 		secondary: null,
-		target: "allAdjacentFoes",
+		target: "normal",
 		type: "Flying",
 		contestType: "Cool",
 	},
@@ -15351,7 +15340,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 0,
 		category: "Status",
 		name: "Recover",
-		pp: 5,
+		pp: 10,
 		priority: 0,
 		flags: { snatch: 1, heal: 1, metronome: 1 },
 		heal: [1, 2],
@@ -15838,7 +15827,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	rockthrow: {
 		num: 88,
-		accuracy: 100,
+		accuracy: 95,
 		basePower: 50,
 		category: "Physical",
 		name: "Rock Throw",
@@ -17676,7 +17665,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 		secondary: {
-			chance: 30,
+			chance: 40,
 			status: 'psn',
 		},
 		target: "normal",
@@ -17850,7 +17839,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		basePower: 0,
 		category: "Status",
 		name: "Soft-Boiled",
-		pp: 5,
+		pp: 10,
 		priority: 0,
 		flags: { snatch: 1, heal: 1, metronome: 1 },
 		heal: [1, 2],
@@ -20028,7 +20017,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	thief: {
 		num: 168,
 		accuracy: 100,
-		basePower: 70,
+		basePower: 60,
 		category: "Physical",
 		name: "Thief",
 		pp: 15,
