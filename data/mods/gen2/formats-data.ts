@@ -750,6 +750,6 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "Uber",
 	},
 	celebi: {
-		tier: "Uber",
+		tier: "OU",
 	},
 };
