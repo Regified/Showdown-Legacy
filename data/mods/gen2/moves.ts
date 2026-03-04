@@ -131,7 +131,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 
 	bite: {
 		inherit: true,
-		overrideOffensiveStat: 'def'
+		category: "Physical",
 	},
 
 	bonemerang: {
@@ -196,7 +196,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 
 	crunch: {
 		inherit: true,
-		overrideOffensiveStat: 'def'
+		category: "Physical",
 	},
 
 	curse: {
@@ -397,7 +397,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 
 	feintattack: {
 		inherit: true,
-		overrideOffensiveStat: 'def'
+		category: "Physical",
 	},
 
 	frustration: {
@@ -481,7 +481,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 
 	lick: {
 		inherit: true,
-		overrideOffensiveStat: 'spd'
+		category: "Special",
 	},
 	leechlife: {
 		inherit: true,
@@ -718,7 +718,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	pursuit: {
 		inherit: true,
-		overrideOffensiveStat: 'def',
+		category: "Physical",
 		onModifyMove() {},
 		condition: {
 			duration: 1,
@@ -866,7 +866,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	
 	shadowball: {
 		inherit: true,
-		overrideOffensiveStat: 'spd'
+		category: "Special",
 	},
 
 	sketch: {
@@ -1036,7 +1036,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	thief: {
 		inherit: true,
-		overrideOffensiveStat: 'def',
+		category: "Physical",
 		onAfterHit() {},
 		secondary: {
 			chance: 100,
