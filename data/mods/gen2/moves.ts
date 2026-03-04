@@ -423,6 +423,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		basePower: 120,
 	},
 
+	gigadrain: {
+		inherit: true,
+		basePower: 75,
+		pp: 15,
+	},
+
 	healbell: {
 		inherit: true,
 		onHit(target, source) {
@@ -619,25 +625,49 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	moonlight: {
 		inherit: true,
 		onHit(pokemon) {
-			if (this.field.isWeather(['sunnyday', 'desolateland'])) {
-				this.heal(pokemon.maxhp);
-			} else if (this.field.isWeather(['raindance', 'primordialsea', 'sandstorm', 'hail'])) {
-				this.heal(pokemon.baseMaxhp / 4);
-			} else {
-				this.heal(pokemon.baseMaxhp / 2);
+			let factor = 0.333;
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				factor = 0.667;
+				break;
+			case 'raindance':
+			case 'sandstorm':
+			case 'hail':
+			case 'snowscape':
+				factor = 0.333;
+				break;
 			}
+			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
+			if (!success) {
+				this.add('-fail', pokemon, 'heal');
+				return this.NOT_FAIL;
+			}
+			return success;
 		},
 	},
 	morningsun: {
 		inherit: true,
 		onHit(pokemon) {
-			if (this.field.isWeather(['sunnyday', 'desolateland'])) {
-				this.heal(pokemon.maxhp);
-			} else if (this.field.isWeather(['raindance', 'primordialsea', 'sandstorm', 'hail'])) {
-				this.heal(pokemon.baseMaxhp / 4);
-			} else {
-				this.heal(pokemon.baseMaxhp / 2);
+			let factor = 0.333;
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				factor = 0.667;
+				break;
+			case 'raindance':
+			case 'sandstorm':
+			case 'hail':
+			case 'snowscape':
+				factor = 0.333;
+				break;
 			}
+			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
+			if (!success) {
+				this.add('-fail', pokemon, 'heal');
+				return this.NOT_FAIL;
+			}
+			return success;
 		},
 	},
 	nightmare: {
@@ -1025,13 +1055,25 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	synthesis: {
 		inherit: true,
 		onHit(pokemon) {
-			if (this.field.isWeather(['sunnyday', 'desolateland'])) {
-				this.heal(pokemon.maxhp);
-			} else if (this.field.isWeather(['raindance', 'primordialsea', 'sandstorm', 'hail'])) {
-				this.heal(pokemon.baseMaxhp / 4);
-			} else {
-				this.heal(pokemon.baseMaxhp / 2);
+			let factor = 0.333;
+			switch (pokemon.effectiveWeather()) {
+			case 'sunnyday':
+			case 'desolateland':
+				factor = 0.667;
+				break;
+			case 'raindance':
+			case 'sandstorm':
+			case 'hail':
+			case 'snowscape':
+				factor = 0.333;
+				break;
 			}
+			const success = !!this.heal(this.modify(pokemon.maxhp, factor));
+			if (!success) {
+				this.add('-fail', pokemon, 'heal');
+				return this.NOT_FAIL;
+			}
+			return success;
 		},
 	},
 	thief: {
@@ -1065,6 +1107,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	toxic: {
 		inherit: true,
+		accuracy: 90,
 		ignoreImmunity: false,
 	},
 	transform: {
