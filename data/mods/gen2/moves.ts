@@ -998,11 +998,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				if (move.id === 'twineedle') {
 					move.secondaries = move.secondaries!.filter(p => !p.kingsrock);
 				}
-				if (move.drain) {
-					this.add('-miss', source);
-					this.hint("In Gen 2, draining moves always miss against Substitute.");
-					return null;
-				}
 				if (move.category === 'Status') {
 					const SubBlocked = ['leechseed', 'lockon', 'mindreader', 'nightmare', 'painsplit', 'sketch'];
 					if (move.id === 'swagger') {

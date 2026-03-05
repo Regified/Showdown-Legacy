@@ -102,6 +102,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		accuracy: 85,
 		target: "normal",
 	},
+	bonemerang: {
+		inherit: true,
+		basePower: 55,
+	},
 	bubble: {
 		inherit: true,
 		basePower: 10,
@@ -200,6 +204,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	cut: {
 		inherit: true,
+		basePower: 60,
 		critRatio: 1,
 		accuracy: 100,
 	},
@@ -225,7 +230,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	
 	disable: {
 		num: 50,
-		accuracy: 75,
+		accuracy: 90,
 		basePower: 0,
 		category: "Status",
 		name: "Disable",
@@ -292,6 +297,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		basePower: 1,
 	},
+	eggbomb: {
+		inherit: true,
+		accuracy: 90,
+	},
 	explosion: {
 		inherit: true,
 		basePower: 250,
@@ -306,7 +315,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	firepunch: {
 		inherit: true,
-		basePower: 70,
+		basePower: 75,
 		secondary: {
 			chance: 30,
 			status: 'brn',
@@ -417,7 +426,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	icepunch: {
 		inherit: true,
-		basePower: 70,
+		basePower: 75,
 	},
 	jumpkick: {
 		inherit: true,
@@ -924,7 +933,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	thunderpunch: {
 		inherit: true,
-		basePower: 70,
+		basePower: 75,
 	},
 	toxic: {
 		inherit: true,
