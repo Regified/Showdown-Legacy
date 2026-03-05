@@ -8715,6 +8715,7 @@ export const Learnsets: import('../../../sim/dex-species').ModdedLearnsetDataTab
 			skyattack: ["2L73", "1M", "1L55"],
 			sleeptalk: ["2M"],
 			snore: ["2M"],
+			solarbeam: ["2M"],
 			steelwing: ["2M"],
 			substitute: ["1M"],
 			sunnyday: ["2M"],
