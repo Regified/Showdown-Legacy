@@ -197,6 +197,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	crunch: {
 		inherit: true,
 		category: "Physical",
+		secondary: {
+			chance: 20,
+			boosts: {
+				def: -1,
+			},
+		},
 	},
 
 	curse: {
