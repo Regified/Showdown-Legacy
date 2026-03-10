@@ -436,7 +436,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		category: "Physical",
 		onModifyMove(move, pokemon) {
 			move.type = pokemon.hpType || 'Dark';
-			const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Dark', 'Psychic', 'Dragon'];
+			const specialTypes = ['Fire', 'Water', 'Grass', 'Ice', 'Electric', 'Ghost', 'Psychic', 'Dragon'];
 			move.category = specialTypes.includes(move.type) ? 'Special' : 'Physical';
 		},
 	},
