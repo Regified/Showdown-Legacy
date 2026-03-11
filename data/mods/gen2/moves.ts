@@ -727,7 +727,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	pinmissile: {
 		inherit: true,
-		basePower: 25,
+		accuracy: 100,
+		basePower: 20,
 	},
 	poisongas: {
 		inherit: true,
