@@ -1119,6 +1119,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	triattack: {
 		inherit: true,
+		basePower: 85,
 		pp: 15,
 		onHit(target, source, move) {
 			move.statusRoll = ['par', 'frz', 'brn'][this.random(3)];
