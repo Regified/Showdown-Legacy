@@ -1135,6 +1135,8 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	triplekick: {
 		inherit: true,
+		accuracy: 100,
+		basePower: 20,
 		multiaccuracy: false,
 		multihit: [1, 3],
 	},
