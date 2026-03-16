@@ -1207,6 +1207,7 @@ export const Learnsets: import('../../../sim/dex-species').ModdedLearnsetDataTab
 			sing: ["2E"],
 			sleeptalk: ["2M"],
 			snore: ["2M"],
+			surf: ["2E"],
 			swagger: ["2M"],
 			sweetkiss: ["2L11"],
 			swift: ["2M"],
