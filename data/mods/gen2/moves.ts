@@ -405,6 +405,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	feintattack: {
 		inherit: true,
 		category: "Physical",
+		basePower: 70,
 	},
 
 	frustration: {
@@ -1082,6 +1083,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	thief: {
 		inherit: true,
 		category: "Physical",
+		basePower: 60,
 		onAfterHit() {},
 		secondary: {
 			chance: 100,
