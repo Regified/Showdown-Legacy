@@ -437,6 +437,11 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		pp: 15,
 	},
 
+	glare: {
+		inherit: true,
+		accuracy: 90,
+	},
+
 	healbell: {
 		inherit: true,
 		onHit(target, source) {
