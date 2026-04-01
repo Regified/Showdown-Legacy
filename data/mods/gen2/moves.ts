@@ -955,6 +955,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			this.actions.useMove(randomMove, pokemon);
 		},
 	},
+	snore: {
+		inherit: true,
+		basePower: 65,
+	},
 	solarbeam: {
 		inherit: true,
 		onPrepareHit(target, source) {
