@@ -1151,6 +1151,15 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		multiaccuracy: false,
 		multihit: [1, 3],
 	},
+	waterfall: {
+		inherit: true,
+		basePower: 70,
+		secondary: {
+			chance: 30,
+			volatileStatus: 'flinch',
+		},
+		
+	},
 	whirlpool: {
 		inherit: true,
 		accuracy: 90,

@@ -1383,7 +1383,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	bind: {
 		num: 20,
 		accuracy: 90,
-		basePower: 30,
+		basePower: 35,
 		category: "Physical",
 		name: "Bind",
 		pp: 20,
