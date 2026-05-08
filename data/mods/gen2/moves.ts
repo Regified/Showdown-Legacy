@@ -191,6 +191,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	crosschop: {
 		inherit: true,
+		accuracy: 85,
 		critRatio: 3,
 	},
 
@@ -461,6 +462,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			}
 		},
 	},
+	irontail: {
+		inherit: true,
+		pp: 15,
+	},
 	jumpkick: {
 		inherit: true,
 		onMoveFail(target, source, move) {
@@ -544,6 +549,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			chance: 30,
 			volatileStatus: 'flinch',
 		},
+	},
+	machpunch: {
+		inherit: true,
+		basePower: 50,
 	},
 	meanlook: {
 		inherit: true,
@@ -1150,6 +1159,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		basePower: 20,
 		multiaccuracy: false,
 		multihit: [1, 3],
+	},
+	twister: {
+		inherit: true,
+		basePower: 70,
 	},
 	waterfall: {
 		inherit: true,

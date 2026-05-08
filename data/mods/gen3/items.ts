@@ -9,6 +9,15 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				pokemon.eatItem();
 			}
 		},
+		onTryEatItem(item, pokemon) {
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
+		},
+		onEat(pokemon) {
+			this.heal(pokemon.baseMaxhp / 4);
+			if (pokemon.getNature().minus === 'spd') {
+				pokemon.addVolatile('confusion');
+			}
+		},
 	},
 	apicotberry: {
 		inherit: true,
@@ -41,7 +50,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Fighting') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -51,7 +60,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpAPriority: 1,
 		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Dark') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -61,7 +70,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpAPriority: 1,
 		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Fire') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -71,7 +80,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpAPriority: 1,
 		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Dragon') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -97,6 +106,15 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				pokemon.eatItem();
 			}
 		},
+		onTryEatItem(item, pokemon) {
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
+		},
+		onEat(pokemon) {
+			this.heal(pokemon.baseMaxhp / 4);
+			if (pokemon.getNature().minus === 'atk') {
+				pokemon.addVolatile('confusion');
+			}
+		},
 	},
 	ganlonberry: {
 		inherit: true,
@@ -115,7 +133,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Rock') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -131,6 +149,15 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onResidual(pokemon) {
 			if (pokemon.hp <= pokemon.maxhp / 2) {
 				pokemon.eatItem();
+			}
+		},
+		onTryEatItem(item, pokemon) {
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
+		},
+		onEat(pokemon) {
+			this.heal(pokemon.baseMaxhp / 4);
+			if (pokemon.getNature().minus === 'def') {
+				pokemon.addVolatile('confusion');
 			}
 		},
 	},
@@ -206,7 +233,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpAPriority: 1,
 		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Electric') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -220,6 +247,33 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				pokemon.eatItem();
 			}
 		},
+		onTryEatItem(item, pokemon) {
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
+		},
+		onEat(pokemon) {
+			this.heal(pokemon.baseMaxhp / 4);
+			if (pokemon.getNature().minus === 'spe') {
+				pokemon.addVolatile('confusion');
+			}
+		},
+	},
+	mentalherb: {
+		inherit: true,
+		onUpdate(pokemon) {
+			const conditions = ['attract', 'taunt', 'encore', 'torment', 'disable'];
+			for (const firstCondition of conditions) {
+				if (pokemon.volatiles[firstCondition]) {
+					if (!pokemon.useItem()) return;
+					for (const secondCondition of conditions) {
+						pokemon.removeVolatile(secondCondition);
+						if (firstCondition === 'attract' && secondCondition === 'attract') {
+							this.add('-end', pokemon, 'move: Attract', '[from] item: Mental Herb');
+						}
+					}
+					return;
+				}
+			}
+		},
 	},
 	metalcoat: {
 		inherit: true,
@@ -227,7 +281,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Steel') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -237,7 +291,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpAPriority: 1,
 		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Grass') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -251,7 +305,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpAPriority: 1,
 		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Water') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -261,7 +315,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpAPriority: 1,
 		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Ice') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -293,7 +347,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Poison') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -319,7 +373,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpAPriority: 1,
 		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Water') {
-				return this.chainModify(1.05);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -329,7 +383,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Flying') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -339,7 +393,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Normal') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -349,7 +403,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Bug') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -373,7 +427,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Ground') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -383,7 +437,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifyAtkPriority: 1,
 		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Ghost') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -408,7 +462,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpAPriority: 1,
 		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Psychic') {
-				return this.chainModify(1.1);
+				return this.chainModify(1.2);
 			}
 		},
 	},
@@ -420,6 +474,15 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onResidual(pokemon) {
 			if (pokemon.hp <= pokemon.maxhp / 2) {
 				pokemon.eatItem();
+			}
+		},
+		onTryEatItem(item, pokemon) {
+			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
+		},
+		onEat(pokemon) {
+			this.heal(pokemon.baseMaxhp / 4);
+			if (pokemon.getNature().minus === 'spa') {
+				pokemon.addVolatile('confusion');
 			}
 		},
 	},

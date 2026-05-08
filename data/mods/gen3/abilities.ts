@@ -64,6 +64,21 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			}
 		},
 	},
+	illuminate: {
+		inherit: true,
+		onTryBoost(boost, target, source, effect) {
+			if (source && target === source) return;
+			if (boost.accuracy && boost.accuracy < 0) {
+				delete boost.accuracy;
+				if (!(effect as ActiveMove).secondaries) {
+					this.add("-fail", target, "unboost", "accuracy", "[from] ability: Illuminate", `[of] ${target}`);
+				}
+			}
+		},
+		onModifyMove(move) {
+			move.ignoreEvasion = true;
+		},
+	},
 	intimidate: {
 		inherit: true,
 		onStart(pokemon) {
@@ -102,6 +117,17 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 		name: "Lightning Rod",
 		rating: 0,
 		num: 32,
+	},
+	magmaarmor: {
+		inherit: true,
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Water' ) {
+				this.debug('Magma Armor weaken');
+				return this.chainModify(0.125);
+			}
+		},
+		flags: { breakable: 1 },
 	},
 	magnetpull: {
 		inherit: true,
@@ -175,6 +201,14 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 			}
 		},
 	},
+	sandveil: {
+		inherit: true,
+		onModifySpD(spd, pokemon) {
+			if (this.field.isWeather('sandstorm')) {
+				return this.chainModify(1.5);
+			}
+		},
+	},
 	shadowtag: {
 		inherit: true,
 		onFoeTrapPokemon(pokemon) {
@@ -189,6 +223,15 @@ export const Abilities: import('../../../sim/dex-abilities').ModdedAbilityDataTa
 					source.trySetStatus('par', target);
 				}
 			}
+		},
+	},
+	stench: {
+		inherit: true,
+		onModifyAccuracyPriority: -2,
+		onModifyAccuracy(accuracy) {
+			if (typeof accuracy !== 'number') return;
+			this.debug('stench - decreasing accuracy');
+			return this.chainModify([3686, 4096]);
 		},
 	},
 	trace: {
