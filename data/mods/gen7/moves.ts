@@ -503,14 +503,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		isNonstandard: null,
 	},
-	howl: {
-		inherit: true,
-		flags: { snatch: 1, metronome: 1 },
-		boosts: {
-			atk: 1,
-		},
-		target: "self",
-	},
 	hydrovortex: {
 		inherit: true,
 		isNonstandard: null,

@@ -604,10 +604,6 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			}
 		},
 	},
-	howl: {
-		inherit: true,
-		target: "allies",
-	},
 	hydropump: {
 		inherit: true,
 		accuracy: 85,
