@@ -4871,7 +4871,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Nickname Clause', 'Endless Battle Clause', 'Cancel Mod', 'Picked Team Size = 4', 'Exact HP Mod', 'Item Clause = 1', 'Open Team Sheets',
 		],
 		banlist: ['Soul Dew', 'Deoxys-Attack', 'Restricted Legendary', 'Mythical'],
-		unbanlist: ['Deoxys-Defense', 'Deoxys-Speed', 'Latios', 'Latias', 'Wobbuffet', 'Wynaut'],
+		unbanlist: ['Celebi', 'Deoxys-Defense', 'Deoxys-Speed', 'Latios', 'Latias', 'Wobbuffet', 'Wynaut'],
 		bestOfDefault: true,
 		onBegin() {
 			this.add('rule', 'Self-KO Clause: If your last Pok\u00e9mon faints to a self-KO move or effect, you will lose the battle');
