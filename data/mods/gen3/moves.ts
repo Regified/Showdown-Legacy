@@ -406,7 +406,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	dynamicpunch: {
 		inherit: true,
-		accuracy: 65,
+		accuracy: 60,
 		pp: 5,
 	},
 	eggbomb: {
@@ -1231,7 +1231,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	zapcannon: {
 		inherit: true,
-		accuracy: 65,
+		accuracy: 60,
 		basePower: 100,
 		pp: 5,
 	},

@@ -177,6 +177,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	camerupt: {
 		inherit: true,
 		baseStats: { hp: 90, atk: 105, def: 70, spa: 110, spd: 75, spe: 30 },
+		abilities: { 0: "Flame Body" },
 	},
 
 	carvanha: {
@@ -476,7 +477,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 
 	farfetchd: {
 		inherit: true,
-		baseStats: { hp: 52, atk: 65, def: 55, spa: 58, spd: 62, spe: 60 },
+		baseStats: { hp: 62, atk: 75, def: 65, spa: 58, spd: 72, spe: 70 },
 	},
 
 	fearow: {
@@ -547,6 +548,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	glalie: {
 		inherit: true,
 		baseStats: { hp: 85, atk: 85, def: 85, spa: 85, spd: 85, spe: 85 },
+		abilities: { 0: "Levitate", 1: "Intimidate" },
 	},
 
 	gligar: {
@@ -1002,6 +1004,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	meowth: {
 		inherit: true,
 		baseStats: { hp: 40, atk: 45, def: 35, spa: 40, spd: 40, spe: 90 },
+		abilities: { 0: "Limber", 1: "Hustle" },
 	},
 
 	metagross: {
@@ -1192,6 +1195,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	persian: {
 		inherit: true,
 		baseStats: { hp: 65, atk: 70, def: 60, spa: 65, spd: 65, spe: 115 },
+		abilities: { 0: "Limber", 1: "Hustle" },
 	},
 
 	phanpy: {
@@ -1457,6 +1461,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	seviper: {
 		inherit: true,
 		baseStats: { hp: 73, atk: 100, def: 60, spa: 100, spd: 60, spe: 65 },
+		abilities: { 0: "Shed Skin", 1: "Hustle" },
 	},
 
 	sharpedo: {
@@ -1752,6 +1757,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	tropius: {
 		inherit: true,
 		baseStats: { hp: 120, atk: 65, def: 83, spa: 85, spd: 87, spe: 51 },
+		abilities: { 0: "Thick Fat", 1: "Chlorophyll" },
 	},
 
 	typhlosion: {
@@ -1847,6 +1853,7 @@ export const Pokedex: import('../../../sim/dex-species').ModdedSpeciesDataTable 
 	wailord: {
 		inherit: true,
 		baseStats: { hp: 170, atk: 90, def: 50, spa: 100, spd: 50, spe: 60 },
+		abilities: { 0: "Water Veil", 1: "Rain Dish" },
 	},
 
 	walrein: {
