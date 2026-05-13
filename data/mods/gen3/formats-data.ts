@@ -1161,7 +1161,7 @@ export const FormatsData: import('../../../sim/dex-species').ModdedSpeciesFormat
 		tier: "Uber",
 	},
 	jirachi: {
-		tier: "OU",
+		tier: "OU", 
 	},
 	deoxys: {
 		tier: "Uber",
