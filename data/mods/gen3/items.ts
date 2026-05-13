@@ -9,15 +9,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				pokemon.eatItem();
 			}
 		},
-		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
-		},
-		onEat(pokemon) {
-			this.heal(pokemon.baseMaxhp / 4);
-			if (pokemon.getNature().minus === 'spd') {
-				pokemon.addVolatile('confusion');
-			}
-		},
 	},
 	apicotberry: {
 		inherit: true,
@@ -106,15 +97,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 				pokemon.eatItem();
 			}
 		},
-		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
-		},
-		onEat(pokemon) {
-			this.heal(pokemon.baseMaxhp / 4);
-			if (pokemon.getNature().minus === 'atk') {
-				pokemon.addVolatile('confusion');
-			}
-		},
 	},
 	ganlonberry: {
 		inherit: true,
@@ -149,15 +131,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onResidual(pokemon) {
 			if (pokemon.hp <= pokemon.maxhp / 2) {
 				pokemon.eatItem();
-			}
-		},
-		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
-		},
-		onEat(pokemon) {
-			this.heal(pokemon.baseMaxhp / 4);
-			if (pokemon.getNature().minus === 'def') {
-				pokemon.addVolatile('confusion');
 			}
 		},
 	},
@@ -245,15 +218,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onResidual(pokemon) {
 			if (pokemon.hp <= pokemon.maxhp / 2) {
 				pokemon.eatItem();
-			}
-		},
-		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
-		},
-		onEat(pokemon) {
-			this.heal(pokemon.baseMaxhp / 4);
-			if (pokemon.getNature().minus === 'spe') {
-				pokemon.addVolatile('confusion');
 			}
 		},
 	},
@@ -411,14 +375,11 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		inherit: true,
 		onUpdate() {},
 		onResidualOrder: 10,
-		onResidualSubOrder: 4,
+		onResidualSubOrder: 4, 
 		onResidual(pokemon) {
 			if (pokemon.hp <= pokemon.maxhp / 2) {
 				pokemon.eatItem();
 			}
-		},
-		onEat(pokemon) {
-			this.heal(30);
 		},
 	},
 	softsand: {
@@ -474,15 +435,6 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onResidual(pokemon) {
 			if (pokemon.hp <= pokemon.maxhp / 2) {
 				pokemon.eatItem();
-			}
-		},
-		onTryEatItem(item, pokemon) {
-			if (!this.runEvent('TryHeal', pokemon, null, this.effect, pokemon.baseMaxhp / 4)) return false;
-		},
-		onEat(pokemon) {
-			this.heal(pokemon.baseMaxhp / 4);
-			if (pokemon.getNature().minus === 'spa') {
-				pokemon.addVolatile('confusion');
 			}
 		},
 	},

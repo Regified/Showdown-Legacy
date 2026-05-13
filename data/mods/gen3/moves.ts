@@ -858,6 +858,18 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			status: 'psn',
 		},
 	},
+	psywave: {
+		inherit: true,
+		accuracy: 90,
+		damageCallback(pokemon) {
+			const psywaveDamage = (this.random(this.trunc(pokemon.level), this.trunc(1.2 * pokemon.level)));
+			if (psywaveDamage <= 0) {
+				this.hint("Desync Clause Mod activated!");
+				return false;
+			}
+			return psywaveDamage;
+		},
+	},
 	pursuit: {
 		inherit: true,
 		category: "Physical",
@@ -963,10 +975,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	skyattack: {
 		inherit: true,
-		secondary: {
-			chance: 10,
-			volatileStatus: 'flinch',
-		},
+		secondary: null,
 	},
 	slam: {
 		inherit: true,
