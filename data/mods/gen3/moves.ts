@@ -965,6 +965,19 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 		inherit: true,
 		flags: { bypasssub: 1, failencore: 1, noassist: 1, failmimic: 1, nosketch: 1 },
 	},
+	skillswap: {
+		inherit: true,
+		onHit(target, source) {
+			const targetAbility = target.ability;
+			const sourceAbility = source.ability;
+			if (targetAbility === sourceAbility || source.hasItem('griseousorb') || target.hasItem('griseousorb')) {
+				return false;
+			}
+			this.add('-activate', source, 'move: Skill Swap');
+			source.setAbility(targetAbility);
+			target.setAbility(sourceAbility);
+		},
+	},
 	skullbash: {
 		inherit: true,
 		basePower: 130,
