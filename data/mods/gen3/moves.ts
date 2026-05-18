@@ -292,6 +292,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			},
 		},
 	},
+	detect: {
+		inherit: true,
+		priority: 4,
+	},
 	dig: {
 		inherit: true,
 		basePower: 80,
@@ -467,6 +471,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	fakeout: {
 		inherit: true,
+		priority: 3,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
 	},
 	feintattack: {
@@ -517,6 +522,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	followme: {
 		inherit: true,
+		priority: 2,
 		volatileStatus: undefined,
 		slotCondition: 'followme',
 		condition: {
@@ -603,6 +609,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				this.damage(this.clampIntRange(damage / 2, 1, Math.floor(target.maxhp / 2)), source, source, move);
 			}
 		},
+	},
+	howl: {
+		inherit: true,
+		target: "adjacentAllyOrSelf",
 	},
 	hydropump: {
 		inherit: true,
@@ -853,6 +863,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 			chance: 30,
 			status: 'psn',
 		},
+	},
+	protect: {
+		inherit: true,
+		priority: 4,
 	},
 	psywave: {
 		inherit: true,
