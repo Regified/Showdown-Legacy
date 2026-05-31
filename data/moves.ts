@@ -1486,7 +1486,6 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		pp: 15,
 		priority: 0,
 		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
-		critRatio: 2,
 		secondaries: [
 			{
 				chance: 10,
@@ -13119,7 +13118,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		secondary: {
 			chance: 30,
 			boosts: {
-				spd: -1,
+				def: -1,
 			},
 		},
 		target: "normal",
@@ -14418,7 +14417,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	},
 	present: {
 		num: 217,
-		accuracy: 90,
+		accuracy: 100,
 		basePower: 0,
 		category: "Physical",
 		name: "Present",

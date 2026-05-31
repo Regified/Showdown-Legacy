@@ -274,6 +274,7 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	},
 	covet: {
 		inherit: true,
+		pp: 10,
 		flags: { protect: 1, mirror: 1, noassist: 1 },
 		type: "Normal",
 	},
@@ -461,6 +462,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 				}
 			},
 		},
+	},
+	endure: {
+		inherit: true,
+		priority: 4,
 	},
 	extrasensory: {
 		inherit: true,
@@ -799,6 +804,12 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	needlearm: {
 		inherit: true,
 		basePower: 80,
+		secondary: {
+			chance: 30,
+			boosts: {
+				spd: -1,
+			},
+		},
 	},
 	nightmare: {
 		inherit: true,
