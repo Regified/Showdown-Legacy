@@ -1080,6 +1080,10 @@ export const Moves: import('../../../sim/dex-moves').ModdedMoveDataTable = {
 	stockpile: {
 		inherit: true,
 		pp: 20,
+		boosts: {
+			def: 1,
+			spd: 1,
+		},
 		condition: {
 			noCopy: true,
 			onStart(target) {
