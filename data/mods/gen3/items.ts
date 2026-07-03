@@ -48,8 +48,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	blackglasses: {
 		inherit: true,
 		onBasePower() {},
-		onModifySpAPriority: 1,
-		onModifySpA(spa, user, target, move) {
+		onModifyAtkPriority: 1,
+		onModifyAtk(atk, user, target, move) {
 			if (move?.type === 'Dark') {
 				return this.chainModify(1.2);
 			}
@@ -337,7 +337,7 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 		onModifySpAPriority: 1,
 		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Water') {
-				return this.chainModify(1.2);
+				return this.chainModify(1.1);
 			}
 		},
 	},
@@ -395,8 +395,8 @@ export const Items: import('../../../sim/dex-items').ModdedItemDataTable = {
 	spelltag: {
 		inherit: true,
 		onBasePower() {},
-		onModifyAtkPriority: 1,
-		onModifyAtk(atk, user, target, move) {
+		onModifySpAPriority: 1,
+		onModifySpA(spa, user, target, move) {
 			if (move?.type === 'Ghost') {
 				return this.chainModify(1.2);
 			}
